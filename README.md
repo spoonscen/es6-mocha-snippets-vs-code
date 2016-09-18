@@ -3,6 +3,12 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 leveraging arrow functions and omitting curlies by where possible.  The 
 snippets use the Mocha function names for ease of memory that way you don't need to learn new names.
 
+## Supported languages (file extensions)
+* JavaScript (.js)
+* TypeScript (.ts)
+* JavaScript React (.jsx)
+* TypeScript React (.tsx)
+
 ![screenshot](images/demo.gif)
 
 ## Included Snippets

@@ -7,12 +7,18 @@
 		"color": "#5c2d91",
 		"theme": "dark"
 	},
-  "icon": "images/mocha-logo.png",
+  "icon": "images/mocha.png",
   "author": "Cory Noonan",
 	"publisher": "spoonscen",
   "engines": { "vscode": "^0.10.1" },
   "categories": [ "Snippets" ],
-	"keywords": ["mocha", "es6", "javascript", "typescript", "ts", "js", "react", "snippet"],
+	"keywords": ["mocha", "es6"],
+	"bugs": { "url": "https://github.com/spoonscen/es6-mocha-snippets-vs-code/issues" },
+	"homepage": "https://github.com/spoonscen/es6-mocha-snippets-vs-code",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/spoonscen/es6-mocha-snippets-vs-code.git"
+	},
 	"badges": [
 		{
 			"url": "https://cldup.com/xFVFxOioAU.svg",
