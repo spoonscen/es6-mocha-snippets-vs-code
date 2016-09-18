@@ -1,0 +1,115 @@
+{   
+    "Mocha Before": {
+        "prefix": "before",
+        "body": [
+            "before(() => $1);"
+        ],
+        "description": "Mocha::Before "
+    },  
+    "Mocha Before Named Function": {
+        "prefix": "beforeNamed",
+        "body": [
+            "before(function $1(){ $2});"
+        ],
+        "description": "Mocha::Before with Named Function"
+    },   
+    "Mocha Before with Description": {
+        "prefix": "beforeDescription",
+        "body": [
+            "before('$1', () => $2);"
+        ],
+        "description": "Mocha::Before with Description"
+    },     
+    "Mocha Before Each": {
+        "prefix": "beforeEach",
+        "body": [
+            "beforeEach(() => $1);"
+        ],
+        "description": "Mocha::Before Each"
+    },  
+    "Mocha Before Each Named Function": {
+        "prefix": "beforeEachNamed",
+        "body": [
+            "beforeEach(function $1(){ $2});"
+        ],
+        "description": "Mocha::Before Each with Named Function"
+    },   
+    "Mocha Before Each with Description": {
+        "prefix": "beforeEachDescription",
+        "body": [
+            "beforeEach('$1', () => $2);"
+        ],
+        "description": "Mocha::Before Each with Description"
+    },           
+    "Mocha After": {
+        "prefix": "after",
+        "body": [
+            "after(() => $1);"
+        ],
+        "description": "Mocha::After "
+    },  
+    "Mocha After Named Function": {
+        "prefix": "afterNamed",
+        "body": [
+            "after(function $1(){ $2});"
+        ],
+        "description": "Mocha::After with Named Function"
+    },   
+    "Mocha After with Description": {
+        "prefix": "afterDescription",
+        "body": [
+            "after('$1', () => $2);"
+        ],
+        "description": "Mocha::After with Description"
+    },     
+    "Mocha After Each": {
+        "prefix": "afterEach",
+        "body": [
+            "afterEach(() => $1);"
+        ],
+        "description": "Mocha::After Each"
+    },  
+    "Mocha After Each Named Function": {
+        "prefix": "afterEachNamed",
+        "body": [
+            "afterEach(function $1(){ $2});"
+        ],
+        "description": "Mocha::After Each with Named Function"
+    },   
+    "Mocha After Each with Description": {
+        "prefix": "afterEachDescription",
+        "body": [
+            "afterEach('$1', () => $2);"
+        ],
+        "description": "Mocha::After Each with Description"
+    },           
+	"Mocha Describe And It": {
+        "prefix": "describeAndIt",
+        "body": [
+            "describe('$1', () => {",
+			"\tit('$2', () => {",
+			"\t\t$3",
+			"\t});",
+			"});"
+        ],
+        "description": "Mocha::Describe with It"
+    },
+    "Mocha Describe": {
+        "prefix": "describe",
+        "body": [
+            "describe('$1', () => {",
+            "\t$2",
+			"});"
+        ],
+        "description": "Mocha::Describe"
+    },
+    "Mocha It": {
+        "prefix": "it",
+        "body": [
+			"it('$1', () => {",
+			"\t$2",
+			"});"
+        ],
+        "description": "Mocha::It"
+    }
+}

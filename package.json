@@ -1,0 +1,43 @@
+{
+  "name": "es6-mocha-snippets",
+  "version": "0.0.1",
+	"displayName": "ES6 Mocha Snippets",
+  "description": "Shortcuts to reduce the amount of boiler plate you need to type when creating a test file using mocha.",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+  "icon": "images/mocha-logo.png",
+  "author": "Cory Noonan",
+	"publisher": "spoonscen",
+  "engines": { "vscode": "^0.10.1" },
+  "categories": [ "Snippets" ],
+	"keywords": ["mocha", "es6", "javascript", "typescript", "ts", "js", "react", "snippet"],
+	"badges": [
+		{
+			"url": "https://cldup.com/xFVFxOioAU.svg",
+			"href": "https://mochajs.org/",
+			"description": "Mocha's Homepage"
+		}
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "typescript",
+				"path": "./snippets/snippets.json"
+			},
+      {
+				"language": "typescriptreact",
+				"path": "./snippets/snippets.json"
+			},
+      {
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			},
+      {
+				"language": "javascriptreact",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	}
+}
