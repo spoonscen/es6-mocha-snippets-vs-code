@@ -1,13 +1,5 @@
 # ES6 Mocha Snippets for Visual Studio Code!
-Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep the code dry
-leveraging arrow functions and omitting curlies by where possible.  The 
-snippets use the Mocha function names for ease of memory that way you don't need to learn new names.
-
-## Supported languages (file extensions)
-* JavaScript (.js)
-* TypeScript (.ts)
-* JavaScript React (.jsx)
-* TypeScript React (.tsx)
+Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep the code dry leveraging arrow functions and omitting curlies by where possible.  The snippets use the Mocha function names for ease of memory that way you don't need to learn new names.
 
 ![screenshot](images/demo.gif)
 
@@ -81,12 +73,15 @@ snippets use the Mocha function names for ease of memory that way you don't need
     });
     ```
 
-
-
+### Other Great Tools:
 * [Visual Studio Code](http://code.visualstudio.com/)
 * [Mocha](https://mochajs.org/)
-
-### Other Great TDD Tools:
-
 * [Sinon JS](http://sinonjs.org/)
 * [Chai JS](https://chaijs.com/)
+
+### Supported languages (file extensions)
+* JavaScript (.js)
+* TypeScript (.ts)
+* JavaScript React (.jsx)
+* TypeScript React (.tsx)
+
