@@ -3,18 +3,20 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
 ![screenshot](images/demo.gif)
 
-## Included Snippets
+## Included Snippet Interfaces
+
+#BDD
 - Before (before)
     ```
     before(() => );
     ```
 - Before Named Function (beforeNamed)
     ```
-    before(function someFunctionName(){ });        
+    before(function someFunctionName(){ });
     ```
 - Before With Description (beforeDescription)
     ```
-    before('some description', () => );    
+    before('some description', () => );
     ```
 - Before Each (beforeEach)
     ```
@@ -56,22 +58,91 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
     ```
     describe('some thing', () => {
         it('can do the thing', () => {
-        
+
         });
     });
     ```
 - Describe (describe)
     ```
     describe('some thing', () => {
-    
+
     });
     ```
 - It (it)
     ```
     it('can do the thing', () => {
-    
+
     });
     ```
+#TDD
+- Suite (suite)
+    ```
+    suite('some thing', () => {
+
+    });
+    ```
+- Suite Setup (suiteSetup)
+    ```
+    suiteSetup(() => {
+
+    });
+    ```
+- Suite Teardown (suiteTeardown)
+    ```
+    suiteTeardown(() => {
+
+    });
+    ```
+- Setup (setup)
+    ```
+    setup(() => {
+
+    });
+    ```
+- Teardown (teardown)
+    ```
+    teardown(() => {
+
+    });
+    ```
+- Teardown (teardown)
+    ```
+    teardown(() => {
+
+    });
+    ```
+- Test (test)
+    ```
+    test('the thing', () => {
+
+    });
+    ```
+- Entire Suite (entireSuite)
+    ```
+    suite('some thing', () => {
+
+        suiteSetup(() => { });
+
+        test('some functionality', () => {
+
+        });
+
+        suiteTeardown(() => { });
+
+    });
+    ```
+# Exports
+    - Exports Suite (exportsSuite)
+    ```
+    exports.Foo = {
+        'Foobar': {
+            'should foo the bar': () => {
+
+            },
+        }
+    };
+    ```
+
 
 ### Other Great Tools:
 * [Visual Studio Code](http://code.visualstudio.com/)
