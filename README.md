@@ -74,6 +74,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
     });
     ```
+
 #TDD
 - Suite (suite)
     ```
@@ -131,6 +132,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
     });
     ```
+
 # Exports
     - Exports Suite (exportsSuite)
     ```
