@@ -1,90 +1,90 @@
 {
     "Mocha Before": {
-        "prefix": "before",
+        "prefix": "m-before",
         "body": [
             "before(() => $1);"
         ],
         "description": "Mocha::Before "
     },
     "Mocha Before Named Function": {
-        "prefix": "beforeNamed",
+        "prefix": "m-beforeNamed",
         "body": [
             "before(function $1(){ $2});"
         ],
         "description": "Mocha::Before with Named Function"
     },
     "Mocha Before with Description": {
-        "prefix": "beforeDescription",
+        "prefix": "m-beforeDescription",
         "body": [
             "before('$1', () => $2);"
         ],
         "description": "Mocha::Before with Description"
     },
     "Mocha Before Each": {
-        "prefix": "beforeEach",
+        "prefix": "m-beforeEach",
         "body": [
             "beforeEach(() => $1);"
         ],
         "description": "Mocha::Before Each"
     },
     "Mocha Before Each Named Function": {
-        "prefix": "beforeEachNamed",
+        "prefix": "m-beforeEachNamed",
         "body": [
             "beforeEach(function $1(){ $2});"
         ],
         "description": "Mocha::Before Each with Named Function"
     },
     "Mocha Before Each with Description": {
-        "prefix": "beforeEachDescription",
+        "prefix": "m-beforeEachDescription",
         "body": [
             "beforeEach('$1', () => $2);"
         ],
         "description": "Mocha::Before Each with Description"
     },
     "Mocha After": {
-        "prefix": "after",
+        "prefix": "m-after",
         "body": [
             "after(() => $1);"
         ],
         "description": "Mocha::After "
     },
     "Mocha After Named Function": {
-        "prefix": "afterNamed",
+        "prefix": "m-afterNamed",
         "body": [
             "after(function $1(){ $2});"
         ],
         "description": "Mocha::After with Named Function"
     },
     "Mocha After with Description": {
-        "prefix": "afterDescription",
+        "prefix": "m-afterDescription",
         "body": [
             "after('$1', () => $2);"
         ],
         "description": "Mocha::After with Description"
     },
     "Mocha After Each": {
-        "prefix": "afterEach",
+        "prefix": "m-afterEach",
         "body": [
             "afterEach(() => $1);"
         ],
         "description": "Mocha::After Each"
     },
     "Mocha After Each Named Function": {
-        "prefix": "afterEachNamed",
+        "prefix": "m-afterEachNamed",
         "body": [
             "afterEach(function $1(){ $2});"
         ],
         "description": "Mocha::After Each with Named Function"
     },
     "Mocha After Each with Description": {
-        "prefix": "afterEachDescription",
+        "prefix": "m-afterEachDescription",
         "body": [
             "afterEach('$1', () => $2);"
         ],
         "description": "Mocha::After Each with Description"
     },
 	"Mocha Describe And It": {
-        "prefix": "describeAndIt",
+        "prefix": "m-describeAndIt",
         "body": [
             "describe('$1', () => {",
 			"\tit('$2', () => {",
@@ -95,7 +95,7 @@
         "description": "Mocha::Describe with It"
     },
     "Mocha Describe": {
-        "prefix": "describe",
+        "prefix": "m-describe",
         "body": [
             "describe('$1', () => {",
             "\t$2",
@@ -104,7 +104,7 @@
         "description": "Mocha::Describe"
     },
     "Mocha It": {
-        "prefix": "it",
+        "prefix": "m-it",
         "body": [
 			"it('$1', () => {",
 			"\t$2",
@@ -113,7 +113,7 @@
         "description": "Mocha::It"
     },
     "Mocha Suite": {
-        "prefix": "suite",
+        "prefix": "m-suite",
         "body": [
 			"suite('$1', () => {",
             "\t$2",
@@ -122,7 +122,7 @@
         "description": "Mocha::Suite"
     },
     "Mocha Suite Setup": {
-        "prefix": "suiteSetup",
+        "prefix": "m-suiteSetup",
         "body": [
 			"suiteSetup(() => {",
             "\t$1",
@@ -131,7 +131,7 @@
         "description": "Mocha::SuiteSetup"
     },
     "Mocha Setup": {
-        "prefix": "setup",
+        "prefix": "m-setup",
         "body": [
 			"setup(() => {",
             "\t$1",
@@ -140,7 +140,7 @@
         "description": "Mocha::Setup"
     },
     "Mocha Suite Teardown": {
-        "prefix": "suiteTeardown",
+        "prefix": "m-suiteTeardown",
         "body": [
 			"suiteTeardown(() => {",
             "\t$1",
@@ -149,7 +149,7 @@
         "description": "Mocha::SuiteTeardown"
     },
     "Mocha Teardown": {
-        "prefix": "teardown",
+        "prefix": "m-teardown",
         "body": [
 			"teardown(() => {",
             "\t$1",
@@ -158,7 +158,7 @@
         "description": "Mocha::Teardown"
     },
     "Mocha Test": {
-        "prefix": "test",
+        "prefix": "m-test",
         "body": [
 			"test('$1', () => {",
             "\t$2",
@@ -167,7 +167,7 @@
         "description": "Mocha::Test"
     },
     "Mocha Entire Suite": {
-        "prefix": "entireSuite",
+        "prefix": "m-entireSuite",
         "body": [
 			"suite('$1', () => {",
             "",
@@ -183,7 +183,7 @@
         "description": "Mocha::EntireSuite"
     },
     "Mocha Exports Suite": {
-        "prefix": "exportsSuite",
+        "prefix": "m-exportsSuite",
         "body": [
             "exports.$1 = {",
             "\t'$2': {",
