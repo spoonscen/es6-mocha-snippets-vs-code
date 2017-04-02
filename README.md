@@ -1,60 +1,60 @@
 # ES6 Mocha Snippets for Visual Studio Code!
-Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep the code dry leveraging arrow functions and omitting curlies by where possible.  The snippets use the Mocha function names for ease of memory that way you don't need to learn new names.
+Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep the code dry leveraging arrow functions and omitting curlies by where possible.  The snippets use the Mocha function names prepended with `m-`.
 
 ![screenshot](images/demo.gif)
 
 ## Included Snippet Interfaces
 
 #BDD
-- Before (before)
+- Before (m-before)
     ```
     before(() => );
     ```
-- Before Named Function (beforeNamed)
+- Before Named Function (m-beforeNamed)
     ```
     before(function someFunctionName(){ });
     ```
-- Before With Description (beforeDescription)
+- Before With Description (m-beforeDescription)
     ```
     before('some description', () => );
     ```
-- Before Each (beforeEach)
+- Before Each (m-beforeEach)
     ```
     beforeEach(() => );
     ```
-- Before Each Named Function (beforeEachNamed)
+- Before Each Named Function (m-beforeEachNamed)
     ```
     beforeEach(function someFunctionName(){ });
     ```
-- Before Each With Description (beforeEachDescription)
+- Before Each With Description (m-beforeEachDescription)
     ```
     beforeEach('some description', () => );
     ```
-- After (after)
+- After (m-after)
     ```
     after(() => );
     ```
-- After Named Function (afterNamed)
+- After Named Function (m-afterNamed)
     ```
     after(function someFunctionName(){ });
     ```
-- After With Description (afterDescription)
+- After With Description (m-afterDescription)
     ```
     after('some description', () => );
     ```
-- After Each (afterEach)
+- After Each (m-afterEach)
     ```
     afterEach(() => );
     ```
-- After Each Named Function (afterEachNamed)
+- After Each Named Function (m-afterEachNamed)
     ```
     afterEach(function someFunctionName(){ });
     ```
-- After Each With Description (afterEachDescription)
+- After Each With Description (m-afterEachDescription)
     ```
     afterEach('some description', () => );
     ```
-- Describe And It (describeAndIt)
+- Describe And It (m-describeAndIt)
     ```
     describe('some thing', () => {
         it('can do the thing', () => {
@@ -62,13 +62,13 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
         });
     });
     ```
-- Describe (describe)
+- Describe (m-describe)
     ```
     describe('some thing', () => {
 
     });
     ```
-- It (it)
+- It (m-it)
     ```
     it('can do the thing', () => {
 
@@ -76,49 +76,49 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
     ```
 
 #TDD
-- Suite (suite)
+- Suite (m-suite)
     ```
     suite('some thing', () => {
 
     });
     ```
-- Suite Setup (suiteSetup)
+- Suite Setup (m-suiteSetup)
     ```
     suiteSetup(() => {
 
     });
     ```
-- Suite Teardown (suiteTeardown)
+- Suite Teardown (m-suiteTeardown)
     ```
     suiteTeardown(() => {
 
     });
     ```
-- Setup (setup)
+- Setup (m-setup)
     ```
     setup(() => {
 
     });
     ```
-- Teardown (teardown)
+- Teardown (m-teardown)
     ```
     teardown(() => {
 
     });
     ```
-- Teardown (teardown)
+- Teardown (m-teardown)
     ```
     teardown(() => {
 
     });
     ```
-- Test (test)
+- Test (m-test)
     ```
     test('the thing', () => {
 
     });
     ```
-- Entire Suite (entireSuite)
+- Entire Suite (m-entireSuite)
     ```
     suite('some thing', () => {
 
@@ -134,7 +134,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
     ```
 
 # Exports
-- Exports Suite (exportsSuite)
+- Exports Suite (m-exportsSuite)
     ```
     exports.Foo = {
         'Foobar': {
