@@ -4,7 +4,7 @@
         "body": [
             "before(() => {",
             "\t$1",
-			"});"
+            "});"
         ],
         "description": "Mocha::Before "
     },
@@ -13,7 +13,7 @@
         "body": [
             "before(function $1() {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::Before with Named Function"
     },
@@ -22,7 +22,7 @@
         "body": [
             "before('$1', () => {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::Before with Description"
     },
@@ -31,7 +31,7 @@
         "body": [
             "beforeEach(() => {",
             "\t$1",
-			"});"
+            "});"
         ],
         "description": "Mocha::Before Each"
     },
@@ -40,7 +40,7 @@
         "body": [
             "beforeEach(function $1() {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::Before Each with Named Function"
     },
@@ -49,7 +49,7 @@
         "body": [
             "beforeEach('$1', () => {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::Before Each with Description"
     },
@@ -58,7 +58,7 @@
         "body": [
             "after(() => {",
             "\t$1",
-			"});"
+            "});"
         ],
         "description": "Mocha::After "
     },
@@ -67,7 +67,7 @@
         "body": [
             "after(function $1() {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::After with Named Function"
     },
@@ -76,7 +76,7 @@
         "body": [
             "after('$1', () => {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::After with Description"
     },
@@ -85,7 +85,7 @@
         "body": [
             "afterEach(() => {",
             "\t$1",
-			"});"
+            "});"
         ],
         "description": "Mocha::After Each"
     },
@@ -94,7 +94,7 @@
         "body": [
             "afterEach(function $1() {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::After Each with Named Function"
     },
@@ -103,18 +103,18 @@
         "body": [
             "afterEach('$1', () => {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::After Each with Description"
     },
-	"Mocha Describe And It": {
+    "Mocha Describe And It": {
         "prefix": "describeAndIt",
         "body": [
             "describe('$1', () => {",
-			"\tit('$2', () => {",
-			"\t\t$3",
-			"\t});",
-			"});"
+            "\tit('$2', () => {",
+            "\t\t$3",
+            "\t});",
+            "});"
         ],
         "description": "Mocha::Describe with It"
     },
@@ -123,23 +123,23 @@
         "body": [
             "describe('$1', () => {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::Describe"
     },
     "Mocha It": {
         "prefix": "it",
         "body": [
-			"it('$1', () => {",
-			"\t$2",
-			"});"
+            "it('$1', () => {",
+            "\t$2",
+            "});"
         ],
         "description": "Mocha::It"
     },
     "Mocha Suite": {
         "prefix": "suite",
         "body": [
-			"suite('$1', () => {",
+            "suite('$1', () => {",
             "\t$2",
             "});"
         ],
@@ -148,7 +148,7 @@
     "Mocha Suite Setup": {
         "prefix": "suiteSetup",
         "body": [
-			"suiteSetup(() => {",
+            "suiteSetup(() => {",
             "\t$1",
             "});"
         ],
@@ -157,7 +157,7 @@
     "Mocha Setup": {
         "prefix": "setup",
         "body": [
-			"setup(() => {",
+            "setup(() => {",
             "\t$1",
             "});"
         ],
@@ -166,7 +166,7 @@
     "Mocha Suite Teardown": {
         "prefix": "suiteTeardown",
         "body": [
-			"suiteTeardown(() => {",
+            "suiteTeardown(() => {",
             "\t$1",
             "});"
         ],
@@ -175,7 +175,7 @@
     "Mocha Teardown": {
         "prefix": "teardown",
         "body": [
-			"teardown(() => {",
+            "teardown(() => {",
             "\t$1",
             "});"
         ],
@@ -184,7 +184,7 @@
     "Mocha Test": {
         "prefix": "test",
         "body": [
-			"test('$1', () => {",
+            "test('$1', () => {",
             "\t$2",
             "});"
         ],
@@ -193,7 +193,7 @@
     "Mocha Entire Suite": {
         "prefix": "entireSuite",
         "body": [
-			"suite('$1', () => {",
+            "suite('$1', () => {",
             "",
             "\tsuiteSetup(() => { });",
             "",
