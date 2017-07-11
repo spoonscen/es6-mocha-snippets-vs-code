@@ -74,7 +74,20 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
     });
     ```
+- Context And It (contextAndIt)
+    ```
+    context('some thing', () => {
+        it('can do the thing', () => {
 
+        });
+    });
+    ```
+- Context (context)
+    ```
+    context('some thing', () => {
+
+    });
+    ```
 #TDD
 - Suite (suite)
     ```
