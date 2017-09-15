@@ -127,6 +127,26 @@
         ],
         "description": "Mocha::Describe"
     },
+	"Mocha Context And It": {
+        "prefix": "contextAndIt",
+        "body": [
+            "context('$1', () => {",
+			"\tit('$2', () => {",
+			"\t\t$3",
+			"\t});",
+			"});"
+        ],
+        "description": "Mocha::Context with It"
+    },
+    "Mocha Context": {
+        "prefix": "context",
+        "body": [
+            "context('$1', () => {",
+            "\t$2",
+			"});"
+        ],
+        "description": "Mocha::Context"
+    },
     "Mocha It": {
         "prefix": "it",
         "body": [
