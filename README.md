@@ -5,7 +5,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
 ## Included Snippet Interfaces
 
-#BDD
+### BDD
 - Before (before)
     ```
     before(() => );
@@ -88,7 +88,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
     });
     ```
-#TDD
+### TDD
 - Suite (suite)
     ```
     suite('some thing', () => {
@@ -146,7 +146,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
     });
     ```
 
-# Exports
+### Exports
 - Exports Suite (exportsSuite)
     ```
     exports.Foo = {
@@ -158,14 +158,117 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
     };
     ```
 
+## Arrow Functions
 
-### Other Great Tools:
+Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow-functions)). If you don't want to pass arrow functions you can use the `f` prefix on every snippet:
+
+### BDDD
+
+- Before Function (fbefore)
+    ```
+    before(function () {});
+    ```
+- Before with Description Function (fbeforeDescription)
+    ```
+    before('', function () {});
+    ```
+- Before Each Function (fbeforeEach)
+    ```
+    beforeEach(function () {});
+    ```
+- Before Each with Description Function (fbreforeEach)
+    ```
+    beforeEach('', function () {});
+    ```
+- After Function (fafter)
+    ```
+    after(function () {});
+    ```
+- After with Description Function (fafterDescription)
+    ```
+    after('', function () {});
+    ```
+- After Each Function (fafterEach)
+    ```
+    afterEach(function () {});
+    ```
+- After Each with Description Function (fafterEach)
+    ```
+    afterEach('', function () {});
+    ```
+- Describe Function (fdescribe)
+    ```
+    describe('', function () {});
+    ```
+- Describe and It Function (fdescribeAndIt)
+    ```
+    describe('', function () {
+      it('', function () {});
+    });
+    ```
+
+### TDDD
+- Context Function (fcontext)
+    ```
+    context('', function () {});
+    ```
+- Context and It Function (fcontextAndIt)
+    ```
+    context('', function () {
+    it('', function () {});
+    });
+    ```
+- It Function (fit)
+    ```
+    it('', function () {});
+    ```
+- Suite Function (fsuite)
+    ```
+    suite('', function () {});
+    ```
+- Suite Teardow Function (fsuiteTeardown)
+    ```
+    suiteTeardown(function () {});
+    ```
+- Setup Function (fsetup)
+    ```
+    setup(function () {});
+    ```
+- Teardown Function (fteardown)
+    ```
+    teardown(function () {});
+    ```
+- Test Function (ftest)
+    ```
+    test('', function () {});
+    ```
+- Entire Suite Function (fentireSuite)
+    ```
+    suite('', function () {
+    suiteSetup(function () { });
+    test('', function () {});
+    suiteTeardown(function () { });
+    });
+    ```
+
+### Exports
+
+- Exports Suite Function (fexportsSuite)
+    ```
+    suite('', function () {
+    suiteSetup(function () { });
+    test('', function () {});
+    suiteTeardown(function () { });
+    });
+    ```
+
+## Other Great Tools:
 * [Visual Studio Code](http://code.visualstudio.com/)
 * [Mocha](https://mochajs.org/)
 * [Sinon JS](http://sinonjs.org/)
 * [Chai JS](https://chaijs.com/)
 
-### Supported languages (file extensions)
+## Supported languages (file extensions)
 * JavaScript (.js)
 * TypeScript (.ts)
 * JavaScript React (.jsx)

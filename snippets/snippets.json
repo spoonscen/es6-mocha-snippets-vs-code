@@ -8,6 +8,15 @@
         ],
         "description": "Mocha::Before "
     },
+    "Mocha Before Function": {
+        "prefix": "fbefore",
+        "body": [
+            "before(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::Before::Function"
+    },
     "Mocha Before Named Function": {
         "prefix": "beforeNamed",
         "body": [
@@ -26,6 +35,15 @@
         ],
         "description": "Mocha::Before with Description"
     },
+    "Mocha Before with Description Function": {
+        "prefix": "fbeforeDescription",
+        "body": [
+            "before('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::Before with Description::Function"
+    },
     "Mocha Before Each": {
         "prefix": "beforeEach",
         "body": [
@@ -34,6 +52,15 @@
             "});"
         ],
         "description": "Mocha::Before Each"
+    },
+    "Mocha Before Each Function": {
+        "prefix": "fbeforeEach",
+        "body": [
+            "beforeEach(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::Before Each::Function"
     },
     "Mocha Before Each Named Function": {
         "prefix": "beforeEachNamed",
@@ -53,6 +80,15 @@
         ],
         "description": "Mocha::Before Each with Description"
     },
+    "Mocha Before Each with Description Function": {
+        "prefix": "fbeforeEachDescription",
+        "body": [
+            "beforeEach('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::Before Each with Description::Function"
+    },
     "Mocha After": {
         "prefix": "after",
         "body": [
@@ -60,7 +96,16 @@
             "\t$1",
             "});"
         ],
-        "description": "Mocha::After "
+        "description": "Mocha::After"
+    },
+    "Mocha After Function": {
+        "prefix": "fafter",
+        "body": [
+            "after(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::After::Function"
     },
     "Mocha After Named Function": {
         "prefix": "afterNamed",
@@ -80,6 +125,15 @@
         ],
         "description": "Mocha::After with Description"
     },
+    "Mocha After with Description Function": {
+        "prefix": "fafterDescription",
+        "body": [
+            "after('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::After with Description::Function"
+    },
     "Mocha After Each": {
         "prefix": "afterEach",
         "body": [
@@ -88,6 +142,15 @@
             "});"
         ],
         "description": "Mocha::After Each"
+    },
+    "Mocha After Each Function": {
+        "prefix": "fafterEach",
+        "body": [
+            "fafterEach(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::After Each::Function"
     },
     "Mocha After Each Named Function": {
         "prefix": "afterEachNamed",
@@ -107,6 +170,15 @@
         ],
         "description": "Mocha::After Each with Description"
     },
+    "Mocha After Each with Description Function": {
+        "prefix": "fafterEachDescription",
+        "body": [
+            "afterEach('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::After Each with Description::Function"
+    },
     "Mocha Describe And It": {
         "prefix": "describeAndIt",
         "body": [
@@ -118,6 +190,17 @@
         ],
         "description": "Mocha::Describe with It"
     },
+    "Mocha Describe And It Function": {
+        "prefix": "fdescribeAndIt",
+        "body": [
+            "describe('$1', function () {",
+            "\tit('$2', function () {",
+            "\t\t$3",
+            "\t});",
+            "});"
+        ],
+        "description": "Mocha::Describe with It::Function"
+    },
     "Mocha Describe": {
         "prefix": "describe",
         "body": [
@@ -127,25 +210,54 @@
         ],
         "description": "Mocha::Describe"
     },
-	"Mocha Context And It": {
+    "Mocha Describe Function": {
+        "prefix": "fdescribe",
+        "body": [
+            "describe('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::Describe::Function"
+    },
+    "Mocha Context And It": {
         "prefix": "contextAndIt",
         "body": [
             "context('$1', () => {",
-			"\tit('$2', () => {",
-			"\t\t$3",
-			"\t});",
-			"});"
+            "\tit('$2', () => {",
+            "\t\t$3",
+            "\t});",
+            "});"
         ],
         "description": "Mocha::Context with It"
+    },
+    "Mocha Context And It Function": {
+        "prefix": "fcontextAndIt",
+        "body": [
+            "context('$1', function () {",
+            "\tit('$2', function () {",
+            "\t\t$3",
+            "\t});",
+            "});"
+        ],
+        "description": "Mocha::Context with It::Function"
     },
     "Mocha Context": {
         "prefix": "context",
         "body": [
             "context('$1', () => {",
             "\t$2",
-			"});"
+            "});"
         ],
         "description": "Mocha::Context"
+    },
+    "Mocha Context Function": {
+        "prefix": "fcontext",
+        "body": [
+            "context('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::Context::Function"
     },
     "Mocha It": {
         "prefix": "it",
@@ -156,6 +268,15 @@
         ],
         "description": "Mocha::It"
     },
+    "Mocha It Function": {
+        "prefix": "fit",
+        "body": [
+            "it('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::It::Function"
+    },
     "Mocha Suite": {
         "prefix": "suite",
         "body": [
@@ -164,6 +285,15 @@
             "});"
         ],
         "description": "Mocha::Suite"
+    },
+    "Mocha Suite Function": {
+        "prefix": "fsuite",
+        "body": [
+            "suite('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::Suite::Function"
     },
     "Mocha Suite Setup": {
         "prefix": "suiteSetup",
@@ -174,6 +304,15 @@
         ],
         "description": "Mocha::SuiteSetup"
     },
+    "Mocha Suite Setup Function": {
+        "prefix": "fsuiteSetup",
+        "body": [
+            "suiteSetup(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::SuiteSetup::Function"
+    },
     "Mocha Setup": {
         "prefix": "setup",
         "body": [
@@ -182,6 +321,15 @@
             "});"
         ],
         "description": "Mocha::Setup"
+    },
+    "Mocha Setup Function": {
+        "prefix": "fsetup",
+        "body": [
+            "setup(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::Setup::Function"
     },
     "Mocha Suite Teardown": {
         "prefix": "suiteTeardown",
@@ -192,6 +340,15 @@
         ],
         "description": "Mocha::SuiteTeardown"
     },
+    "Mocha Suite Teardown Function": {
+        "prefix": "fsuiteTeardown",
+        "body": [
+            "suiteTeardown(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::SuiteTeardown::Function"
+    },
     "Mocha Teardown": {
         "prefix": "teardown",
         "body": [
@@ -201,6 +358,15 @@
         ],
         "description": "Mocha::Teardown"
     },
+    "Mocha Teardown Function": {
+        "prefix": "fteardown",
+        "body": [
+            "teardown(function () {",
+            "\t$1",
+            "});"
+        ],
+        "description": "Mocha::Teardown::Function"
+    },
     "Mocha Test": {
         "prefix": "test",
         "body": [
@@ -209,6 +375,15 @@
             "});"
         ],
         "description": "Mocha::Test"
+    },
+    "Mocha Test Function": {
+        "prefix": "ftest",
+        "body": [
+            "test('$1', function () {",
+            "\t$2",
+            "});"
+        ],
+        "description": "Mocha::Test::Function"
     },
     "Mocha Entire Suite": {
         "prefix": "entireSuite",
@@ -226,6 +401,22 @@
         ],
         "description": "Mocha::EntireSuite"
     },
+    "Mocha Entire Suite Function": {
+        "prefix": "fentireSuite",
+        "body": [
+            "suite('$1', function () {",
+            "",
+            "\tsuiteSetup(function () { });",
+            "",
+            "\ttest('$2', function () {",
+            "\t\t$3",
+            "\t});",
+            "",
+            "\tsuiteTeardown(function () { });",
+            "});"
+        ],
+        "description": "Mocha::EntireSuite::Function"
+    },
     "Mocha Exports Suite": {
         "prefix": "exportsSuite",
         "body": [
@@ -238,5 +429,18 @@
             "};"
         ],
         "description": "Mocha::ExportsSuite"
+    },
+    "Mocha Exports Suite Function": {
+        "prefix": "fexportsSuite",
+        "body": [
+            "exports.$1 = {",
+            "\t'$2': {",
+            "\t\t'$3': function () {",
+            "\t\t\t$4",
+            "\t\t},",
+            "\t}",
+            "};"
+        ],
+        "description": "Mocha::ExportsSuite::Function"
     }
 }
