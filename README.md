@@ -162,7 +162,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
 Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow-functions)). If you don't want to pass arrow functions you can use the `f` prefix on every snippet:
 
-### BDDD
+### BDD
 
 - Before Function (fbefore)
     ```
@@ -207,7 +207,7 @@ Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow
     });
     ```
 
-### TDDD
+### TDD
 - Context Function (fcontext)
     ```
     context('', function () {});
@@ -215,7 +215,7 @@ Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow
 - Context and It Function (fcontextAndIt)
     ```
     context('', function () {
-    it('', function () {});
+      it('', function () {});
     });
     ```
 - It Function (fit)
@@ -245,9 +245,9 @@ Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow
 - Entire Suite Function (fentireSuite)
     ```
     suite('', function () {
-    suiteSetup(function () { });
-    test('', function () {});
-    suiteTeardown(function () { });
+      suiteSetup(function () { });
+      test('', function () {});
+      suiteTeardown(function () { });
     });
     ```
 
@@ -256,9 +256,9 @@ Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow
 - Exports Suite Function (fexportsSuite)
     ```
     suite('', function () {
-    suiteSetup(function () { });
-    test('', function () {});
-    suiteTeardown(function () { });
+      suiteSetup(function () { });
+      test('', function () {});
+      suiteTeardown(function () { });
     });
     ```
 
