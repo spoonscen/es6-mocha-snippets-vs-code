@@ -1,19 +1,28 @@
 {
-  "name": "es6-mocha-snippets",
-  "version": "0.0.2",
+	"name": "es6-mocha-snippets",
+	"version": "0.0.3",
 	"displayName": "ES6 Mocha Snippets",
-  "description": "Shortcuts to reduce the amount of boiler plate you need to type when creating a test file using mocha.",
+	"description": "Shortcuts to reduce the amount of boiler plate you need to type when creating a test file using mocha.",
 	"galleryBanner": {
 		"color": "#486a8d",
 		"theme": "dark"
 	},
-  "icon": "images/mocha.png",
-  "author": "Cory Noonan",
+	"icon": "images/mocha.png",
+	"author": "Cory Noonan",
 	"publisher": "spoonscen",
-  "engines": { "vscode": "^0.10.1" },
-  "categories": [ "Snippets" ],
-	"keywords": ["mocha", "es6"],
-	"bugs": { "url": "https://github.com/spoonscen/es6-mocha-snippets-vs-code/issues" },
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"mocha",
+		"es6"
+	],
+	"bugs": {
+		"url": "https://github.com/spoonscen/es6-mocha-snippets-vs-code/issues"
+	},
 	"homepage": "https://github.com/spoonscen/es6-mocha-snippets-vs-code",
 	"repository": {
 		"type": "git",
@@ -32,15 +41,15 @@
 				"language": "typescript",
 				"path": "./snippets/snippets.json"
 			},
-      {
+			{
 				"language": "typescriptreact",
 				"path": "./snippets/snippets.json"
 			},
-      {
+			{
 				"language": "javascript",
 				"path": "./snippets/snippets.json"
 			},
-      {
+			{
 				"language": "javascriptreact",
 				"path": "./snippets/snippets.json"
 			}
