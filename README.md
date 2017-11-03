@@ -176,7 +176,7 @@ Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow
     ```
     beforeEach(function () {});
     ```
-- Before Each with Description Function (fbreforeEach)
+- Before Each with Description Function (fbeforeEach)
     ```
     beforeEach('', function () {});
     ```
