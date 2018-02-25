@@ -4,3 +4,4 @@
 *.vsix
 node_modules
 out
+.vscode-test
