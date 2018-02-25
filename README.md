@@ -4,7 +4,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 ![screenshot](images/demo.gif)
 
 ## Customize the snippets
-
+In your "User Settings" or workspace settings you an configure the snippets to fit your needs.
 ### Semicolons
 Turn semicolons on or off
 ```
@@ -14,10 +14,18 @@ Turn semicolons on or off
 ```
 
 ### Custom prefix
-Use this to add a custom prefix to the snippet. For example if input here `m-` if you want the snippets to appear when you type `m-`
+Use this to add a custom prefix to the snippet. For example if input here `'m-'` if you want the snippets to appear when you type `m-`
 ```
 {
     "mocha-snippets.custom-prefix": string
+}
+```
+
+### Custom Glob Pattern
+Use this to add a custom glob pattern that you want this extension to apply to. Example `'**/*.spec.ts'`
+```
+{
+    "mocha-snippets.glob": string
 }
 ```
 

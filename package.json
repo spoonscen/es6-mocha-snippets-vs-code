@@ -59,6 +59,26 @@
     "onLanguage:javascriptreact"
   ],
   "contributes": {
-    "snippets": []
+    "configuration": {
+      "type": "object",
+      "title": "Mocha Snippets configuration",
+      "properties": {
+        "mocha-snippets.glob": {
+          "type": "string",
+          "default": null,
+          "description": "Add a custom glob pattern for file (**/*.spec.ts) that you want the extension to apply to."
+        },
+        "mocha-snippets.semicolon": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include semicolons in your snippets"
+        },
+        "mocha-snippets.custom-prefix": {
+          "type": "string",
+          "default": null,
+          "description": "Adds a prefix to your snippet shortcuts"
+        }
+      }
+    }
   }
 }

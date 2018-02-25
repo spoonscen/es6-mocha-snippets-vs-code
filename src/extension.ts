@@ -24,11 +24,13 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-    let sel: vscode.DocumentSelector = ['typescript', 'javascript', 'typescriptreact', 'javascriptreact']
     const config = vscode.workspace.getConfiguration('mocha-snippets')
+    const glob = config.get<string>('glob')
     const semiColons = config.get<boolean>('semicolon')
     const customPrefix = config.get<string>('custom-prefix')
-    const SnippetProvider = vscode.languages.registerCompletionItemProvider(sel, new CompletionItemProvider({ semiColons, customPrefix }))
+
+    const selector: vscode.DocumentSelector = ['typescript', 'javascript', 'typescriptreact', 'javascriptreact'].map(language => ({ language, pattern: glob }))
+    const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, new CompletionItemProvider({ semiColons, customPrefix }))
     context.subscriptions.push(SnippetProvider)
 }
 
