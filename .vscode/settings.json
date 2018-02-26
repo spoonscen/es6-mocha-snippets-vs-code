@@ -1,0 +1,6 @@
+{
+    "mocha-snippets.custom-prefix": "m-",
+    "mocha-snippets.function-type": "arrow",
+    "mocha-snippets.semicolon": false,
+    "mocha-snippets.glob": "**/*.test.ts"
+}

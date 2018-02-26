@@ -3,6 +3,40 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 
 ![screenshot](images/demo.gif)
 
+## Customize the snippets
+In your "User Settings" or workspace settings you an configure the snippets to fit your needs. You will need to restart VS Code make them active.
+### Semicolons
+Turn semicolons on or off
+```
+{
+    "mocha-snippets.semicolons": boolean
+}
+```
+
+### Custom prefix
+Use this to add a custom prefix to the snippet. For example if input here `'m-'` if you want the snippets to appear when you type `m-`
+```
+{
+    "mocha-snippets.custom-prefix": string
+}
+```
+
+### Custom Glob Pattern
+Use this to add a custom glob pattern that you want this extension to apply to. Example `'**/*.spec.ts'`
+```
+{
+    "mocha-snippets.glob": string
+}
+```
+
+### Include arrow functions, normal functions, or both
+Use this setting to filter which type of functions you want to use in your snippets
+```
+{
+    "mocha-snippets.function-type": 'arrow' | 'function' | 'both'
+}
+```
+
 ## Included Snippet Interfaces
 
 ### BDD
@@ -273,4 +307,3 @@ Mocha discourage passing arrow functions (more [here](https://mochajs.org/#arrow
 * TypeScript (.ts)
 * JavaScript React (.jsx)
 * TypeScript React (.tsx)
-
