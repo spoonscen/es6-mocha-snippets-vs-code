@@ -4,7 +4,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 ![screenshot](images/demo.gif)
 
 ## Customize the snippets
-In your "User Settings" or workspace settings you an configure the snippets to fit your needs.
+In your "User Settings" or workspace settings you an configure the snippets to fit your needs. You will need to restart VS Code make them active.
 ### Semicolons
 Turn semicolons on or off
 ```
@@ -26,6 +26,14 @@ Use this to add a custom glob pattern that you want this extension to apply to. 
 ```
 {
     "mocha-snippets.glob": string
+}
+```
+
+### Include arrow functions, normal functions, or both
+Use this setting to filter which type of functions you want to use in your snippets
+```
+{
+    "mocha-snippets.function-type": 'arrow' | 'function' | 'both'
 }
 ```
 

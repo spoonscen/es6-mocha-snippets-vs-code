@@ -1,8 +1,9 @@
-type Snippet = { body: string[], description: string, prefix: string }
+type Snippet = { body: string[], description: string, prefix: string, functionType: 'arrow' | 'function' | 'both' }
 
 const snippets: Snippet[] = [
     {
         prefix: "before",
+        functionType: 'arrow',
         body: [
             "before(() => {",
             "\t${1}",
@@ -12,6 +13,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fbefore",
+        functionType: 'function',
         body: [
             "before(function () {",
             "\t${1}",
@@ -21,6 +23,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "beforeNamed",
+        functionType: 'arrow',
         body: [
             "before(function ${1}() {",
             "\t${2}",
@@ -30,6 +33,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "beforeDescription",
+        functionType: 'arrow',
         body: [
             "before('${1}', () => {",
             "\t${2}",
@@ -39,6 +43,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fbeforeDescription",
+        functionType: 'function',
         body: [
             "before('${1}', function () {",
             "\t${2}",
@@ -48,6 +53,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "beforeEach",
+        functionType: 'arrow',
         body: [
             "beforeEach(() => {",
             "\t${1}",
@@ -57,6 +63,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fbeforeEach",
+        functionType: 'function',
         body: [
             "beforeEach(function () {",
             "\t${1}",
@@ -66,6 +73,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "beforeEachNamed",
+        functionType: 'arrow',
         body: [
             "beforeEach(function ${1}() {",
             "\t${2}",
@@ -75,6 +83,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "beforeEachDescription",
+        functionType: 'arrow',
         body: [
             "beforeEach('${1}', () => {",
             "\t${2}",
@@ -84,6 +93,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fbeforeEachDescription",
+        functionType: 'function',
         body: [
             "beforeEach('${1}', function () {",
             "\t${2}",
@@ -93,6 +103,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "after",
+        functionType: 'arrow',
         body: [
             "after(() => {",
             "\t${1}",
@@ -102,6 +113,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fafter",
+        functionType: 'function',
         body: [
             "after(function () {",
             "\t${1}",
@@ -111,6 +123,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "afterNamed",
+        functionType: 'arrow',
         body: [
             "after(function ${1}() {",
             "\t${2}",
@@ -120,6 +133,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "afterDescription",
+        functionType: 'arrow',
         body: [
             "after('${1}', () => {",
             "\t${2}",
@@ -129,6 +143,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fafterDescription",
+        functionType: 'function',
         body: [
             "after('${1}', function () {",
             "\t${2}",
@@ -138,6 +153,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "afterEach",
+        functionType: 'arrow',
         body: [
             "afterEach(() => {",
             "\t${1}",
@@ -147,6 +163,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fafterEach",
+        functionType: 'function',
         body: [
             "fafterEach(function () {",
             "\t${1}",
@@ -156,6 +173,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "afterEachNamed",
+        functionType: 'arrow',
         body: [
             "afterEach(function ${1}() {",
             "\t${2}",
@@ -165,6 +183,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "afterEachDescription",
+        functionType: 'arrow',
         body: [
             "afterEach('${1}', () => {",
             "\t${2}",
@@ -174,6 +193,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fafterEachDescription",
+        functionType: 'function',
         body: [
             "afterEach('${1}', function () {",
             "\t${2}",
@@ -183,6 +203,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "describeAndIt",
+        functionType: 'arrow',
         body: [
             "describe('${1}', () => {",
             "\tit('${2}', () => {",
@@ -194,6 +215,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fdescribeAndIt",
+        functionType: 'function',
         body: [
             "describe('${1}', function () {",
             "\tit('${2}', function () {",
@@ -205,6 +227,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "describe",
+        functionType: 'arrow',
         body: [
             "describe('${1}', () => {",
             "\t${2}",
@@ -214,6 +237,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fdescribe",
+        functionType: 'function',
         body: [
             "describe('${1}', function () {",
             "\t${2}",
@@ -223,6 +247,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "contextAndIt",
+        functionType: 'arrow',
         body: [
             "context('${1}', () => {",
             "\tit('${2}', () => {",
@@ -234,6 +259,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fcontextAndIt",
+        functionType: 'function',
         body: [
             "context('${1}', function () {",
             "\tit('${2}', function () {",
@@ -245,6 +271,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "context",
+        functionType: 'arrow',
         body: [
             "context('${1}', () => {",
             "\t${2}",
@@ -254,6 +281,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fcontext",
+        functionType: 'function',
         body: [
             "context('${1}', function () {",
             "\t${2}",
@@ -263,6 +291,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "it",
+        functionType: 'arrow',
         body: [
             "it('${1}', () => {",
             "\t${2}",
@@ -272,6 +301,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fit",
+        functionType: 'function',
         body: [
             "it('${1}', function () {",
             "\t${2}",
@@ -281,6 +311,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "suite",
+        functionType: 'arrow',
         body: [
             "suite('${1}', () => {",
             "\t${2}",
@@ -290,6 +321,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fsuite",
+        functionType: 'function',
         body: [
             "suite('${1}', function () {",
             "\t${2}",
@@ -299,6 +331,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "suiteSetup",
+        functionType: 'arrow',
         body: [
             "suiteSetup(() => {",
             "\t${1}",
@@ -308,6 +341,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fsuiteSetup",
+        functionType: 'function',
         body: [
             "suiteSetup(function () {",
             "\t${1}",
@@ -317,6 +351,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "setup",
+        functionType: 'arrow',
         body: [
             "setup(() => {",
             "\t${1}",
@@ -326,6 +361,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fsetup",
+        functionType: 'function',
         body: [
             "setup(function () {",
             "\t${1}",
@@ -335,6 +371,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "suiteTeardown",
+        functionType: 'arrow',
         body: [
             "suiteTeardown(() => {",
             "\t${1}",
@@ -344,6 +381,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fsuiteTeardown",
+        functionType: 'function',
         body: [
             "suiteTeardown(function () {",
             "\t${1}",
@@ -353,6 +391,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "teardown",
+        functionType: 'arrow',
         body: [
             "teardown(() => {",
             "\t${1}",
@@ -362,6 +401,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fteardown",
+        functionType: 'function',
         body: [
             "teardown(function () {",
             "\t${1}",
@@ -371,6 +411,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "test",
+        functionType: 'arrow',
         body: [
             "test('${1}', () => {",
             "\t${2}",
@@ -380,6 +421,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "ftest",
+        functionType: 'function',
         body: [
             "test('${1}', function () {",
             "\t${2}",
@@ -389,6 +431,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "entireSuite",
+        functionType: 'arrow',
         body: [
             "suite('${1}', () => {",
             "",
@@ -405,6 +448,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fentireSuite",
+        functionType: 'function',
         body: [
             "suite('${1}', function () {",
             "",
@@ -421,6 +465,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "exportsSuite",
+        functionType: 'arrow',
         body: [
             "exports.${1} = {",
             "\t'${2}': {",
@@ -434,6 +479,7 @@ const snippets: Snippet[] = [
     },
     {
         prefix: "fexportsSuite",
+        functionType: 'function',
         body: [
             "exports.${1} = {",
             "\t'${2}': {",
