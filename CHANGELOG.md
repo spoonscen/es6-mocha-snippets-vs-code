@@ -1,3 +1,7 @@
+0.1.1 / 2018-03-06
+==================
+  * Fix typo in docs "semicolons" -> "semicolon"
+
 0.1.1 / 2018-02-25
 ==================
   * Adds changelog
