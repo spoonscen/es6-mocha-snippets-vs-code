@@ -9,7 +9,7 @@ In your "User Settings" or workspace settings you an configure the snippets to f
 Turn semicolons on or off
 ```
 {
-    "mocha-snippets.semicolons": boolean
+    "mocha-snippets.semicolon": boolean
 }
 ```
 
