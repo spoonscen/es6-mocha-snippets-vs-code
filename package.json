@@ -87,5 +87,8 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.106"
   }
 }
