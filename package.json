@@ -75,6 +75,14 @@
           "default": "both",
           "description": "Choose what type of snippets you prefer to use either 'arrow' (() =>), 'function' (function), or both"
         },
+        "mocha-snippets.quote-type": {
+          "type": [
+            "single",
+            "dobule"
+          ],
+          "default": "single",
+          "description": "Choose what type of quotes you prefer single or double"
+        },
         "mocha-snippets.semicolon": {
           "type": "boolean",
           "default": true,
