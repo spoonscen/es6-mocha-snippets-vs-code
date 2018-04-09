@@ -1,4 +1,4 @@
-type Snippet = { body: string[], description: string, prefix: string, functionType: 'arrow' | 'function' | 'both' }
+export type Snippet = { body: string[], description: string, prefix: string, functionType: 'arrow' | 'function' }
 
 const snippets: Snippet[] = [
     {

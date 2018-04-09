@@ -67,12 +67,14 @@
           "description": "Add a custom glob pattern for file (**/*.spec.ts) that you want the extension to apply to."
         },
         "mocha-snippets.function-type": {
-          "type": [
-            "both",
+          "type": "string",
+          "enum":[            
             "arrow",
-            "function"
+            "function",
+            "prefixArrow",
+            "prefixFunction"
           ],
-          "default": "both",
+          "default": "function",
           "description": "Choose what type of snippets you prefer to use either 'arrow' (() =>), 'function' (function), or both"
         },
         "mocha-snippets.semicolon": {

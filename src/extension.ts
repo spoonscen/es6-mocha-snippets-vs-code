@@ -1,31 +1,38 @@
 import * as vscode from 'vscode'
-import snippets from './snippets'
+import snippets, { Snippet } from './snippets'
 
-type Config = {
-    semicolons: boolean
-    customPrefix: string
-    functionType: 'arrow' | 'function' | 'both'
+type Prefixes = {
+    prefixArrow: string
+    prefixFunction: string
 }
 
-export class CompletionItemProvider implements vscode.CompletionItemProvider {
-    private semicolons: boolean
-    private customPrefix: string
-    private functionType: Config['functionType']
+type FunctionTypeFilter = 'arrow' | 'function' | 'prefixArrow' | 'prefixFunction'
 
-    constructor(config: Config) {
-        this.customPrefix = config.customPrefix
-        this.semicolons = config.semicolons
-        this.functionType = config.functionType
+type Filter = (s: Snippet) => boolean
+type Prefixer = (s: Snippet) => Snippet
+
+export class CompletionItemProvider implements vscode.CompletionItemProvider {
+    constructor(private readonly customPrefix: string, private readonly semicolons: boolean, private readonly  functionType: FunctionTypeFilter, private readonly  prefixes: Prefixes) {     
     }
 
-    provideCompletionItems = (document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.CompletionItem[] => {
+    buildFilter(): Filter {
+        return this.functionType.startsWith('prefix') ? () => true : (s) => s.functionType == this.functionType      
+    }
+
+    buildPrefixer(): Prefixer {
+        let prefixer: Prefixer = (s) => {
+            s.prefix = this.prefixes[<'prefixArrow' | 'prefixFunction'>this.functionType] + s.prefix
+            return s
+        }
+        return this.functionType.startsWith('prefix') ? prefixer : (s) => s
+    }
+
+    provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.CompletionItem[] {        
+        
         return snippets
-            .filter(s => {
-                if (this.functionType === 'both') return s
-                if (this.functionType === 'arrow' && s.functionType === 'arrow') return s
-                if (this.functionType === 'function' && s.functionType === 'function') return s
-            })
-            .map(({ body, description, prefix }) => {
+            .filter(this.buildFilter())          
+            .filter(this.buildPrefixer())
+            .map(({ body, description, prefix }) => {                
                 const completionItem = new vscode.CompletionItem(prefix, vscode.CompletionItemKind.Snippet)
                 completionItem.insertText = new vscode.SnippetString(this.semicolons ? body.join('\n') : body.join('\n').replace(/;/g, ''))
                 completionItem.filterText = this.customPrefix ? this.customPrefix + prefix : prefix
@@ -38,12 +45,16 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
 export function activate(context: vscode.ExtensionContext) {
     const config = vscode.workspace.getConfiguration('mocha-snippets')
     const glob = config.get<string>('glob')
-    const semicolons = config.get<boolean>('semicolon', true)
+    const semicolons = config.get<boolean>('semicolon', true)    
     const customPrefix = config.get<string>('custom-prefix', '')
-    const functionType = config.get<Config['functionType']>('function-type', 'both')
+    const functionType = config.get<FunctionTypeFilter>('function-type', 'function')
+    const prefixes = {
+        prefixArrow: config.get<string>('arrow-prefix', 'a'),
+        prefixFunction: config.get<string>('function-prefix', 'f')
+    }
 
     const selector: vscode.DocumentSelector = ['typescript', 'javascript', 'typescriptreact', 'javascriptreact'].map(language => ({ language, pattern: glob }))
-    const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, new CompletionItemProvider({ semicolons, customPrefix, functionType }))
+    const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, new CompletionItemProvider(customPrefix, semicolons, functionType, prefixes))
     context.subscriptions.push(SnippetProvider)
 }
 
