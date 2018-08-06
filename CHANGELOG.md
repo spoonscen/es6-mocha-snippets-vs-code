@@ -3,6 +3,11 @@
    * Adds setting for quote-type: single | double
    * Normalizes all indentation to 2 spaces
 
+0.1.3 / 2018-03-06
+==================
+  * Adds .vscodeignore to ignore the .vscode-test folder
+  * Fixes typo in CHANGELOG.md where version 0.1.1 appeared twice.
+
 0.1.2 / 2018-03-06
 ==================
   * Fix typo in docs "semicolons" -> "semicolon"
@@ -18,4 +23,3 @@
   * Adds setting for function-type
   * Adds setting for semicolon
   * Adds setting for glob
-
