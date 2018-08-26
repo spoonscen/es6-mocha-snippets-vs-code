@@ -1,5 +1,6 @@
 
 import * as assert from 'assert'
+import * as vscode from 'vscode'
 import { CompletionItemProvider } from '../src/extension'
 import snippets from '../src/snippets'
 
@@ -11,12 +12,19 @@ describe('extension', () => {
 
       let options: {
         semicolons: boolean,
-        customPrefix: string,
-        functionType: 'arrow' | 'function' | 'both'
+        customPrefix:
+        string,
+        functionType: 'arrow' | 'function' | 'both',
+        quoteType: 'single' | 'double'
       }
 
       beforeEach(() => {
-        options = { semicolons: true, customPrefix: '', functionType: 'both' }
+        options = {
+          semicolons: true,
+          customPrefix: '',
+          functionType: 'both',
+          quoteType: 'single'
+        }
       });
 
       it('returns a completion item for each snippet', () => {
@@ -30,7 +38,7 @@ describe('extension', () => {
         const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
 
         completionItems.forEach(item => {
-          assert.equal(item.insertText.includes(';'), false)
+          assert.equal((item.insertText as vscode.SnippetString).value.includes(';'), false)
         })
       })
 
@@ -38,8 +46,39 @@ describe('extension', () => {
         const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
 
         completionItems.forEach(item => {
-          assert.equal(item.insertText.includes(';'), true)
+          assert.equal((item.insertText as vscode.SnippetString).value.includes(';'), true)
         })
+      })
+
+      it('uses single quotes when quoteType = single', () => {
+        const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
+
+        const snippetsWithSingleQuotes = completionItems.filter((item) => {
+          return (item.insertText as vscode.SnippetString).value.includes(`'`)
+        })
+
+        const snippetsWithDoubleQuotes = completionItems.filter((item) => {
+          return (item.insertText as vscode.SnippetString).value.includes(`"`)
+        })
+
+        assert(snippetsWithSingleQuotes.length > 1, 'no snippets found with single quotes')
+        assert(snippetsWithDoubleQuotes.length === 0, 'Snippets with double quotes found when there should be none')
+      })
+
+      it('uses double quotes when quoteType = double', () => {
+        options.quoteType = 'double'
+        const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
+
+        const snippetsWithSingleQuotes = completionItems.filter((item) => {
+          return (item.insertText as vscode.SnippetString).value.includes(`'`)
+        })
+
+        const snippetsWithDoubleQuotes = completionItems.filter((item) => {
+          return (item.insertText as vscode.SnippetString).value.includes(`"`)
+        })
+
+        assert(snippetsWithDoubleQuotes.length > 1, 'no snippets found with double quotes')
+        assert(snippetsWithSingleQuotes.length === 0, 'Snippets with single quotes found when there should be none')
       })
 
       it('adds a custom prefix to the filter text', () => {

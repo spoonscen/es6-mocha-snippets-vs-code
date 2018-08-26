@@ -8,7 +8,7 @@ Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep th
 ## Customize the snippets
 In your "User Settings" or workspace settings you an configure the snippets to fit your needs. You will need to restart VS Code make them active.
 ### Semicolons
-Turn semicolons on or off
+Turn semicolons on or off. Defaults to `true`.
 ```
 {
     "mocha-snippets.semicolon": boolean
@@ -16,7 +16,7 @@ Turn semicolons on or off
 ```
 
 ### Custom prefix
-Use this to add a custom prefix to the snippet. For example if input here `'m-'` if you want the snippets to appear when you type `m-`
+Use this to add a custom prefix to the snippet. For example if input here `'m-'` if you want the snippets to appear when you type `m-`. Defaults to empty string.
 ```
 {
     "mocha-snippets.custom-prefix": string
@@ -24,7 +24,7 @@ Use this to add a custom prefix to the snippet. For example if input here `'m-'`
 ```
 
 ### Custom Glob Pattern
-Use this to add a custom glob pattern that you want this extension to apply to. Example `'**/*.spec.ts'`
+Use this to add a custom glob pattern that you want this extension to apply to. Example `'**/*.spec.ts'`. Defaults to empty string.
 ```
 {
     "mocha-snippets.glob": string
@@ -32,10 +32,18 @@ Use this to add a custom glob pattern that you want this extension to apply to. 
 ```
 
 ### Include arrow functions, normal functions, or both
-Use this setting to filter which type of functions you want to use in your snippets
+Use this setting to filter which type of functions you want to use in your snippets. Defaults to `'both'`.
 ```
 {
     "mocha-snippets.function-type": 'arrow' | 'function' | 'both'
+}
+```
+
+### Use single or double quotes
+Use this setting to choose the type of quotes you prefer in the snippets that have quotes. Defaults to `'single'`.
+```
+{
+    "mocha-snippets.quote-type": 'single' | 'double'
 }
 ```
 

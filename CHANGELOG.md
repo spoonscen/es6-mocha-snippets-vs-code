@@ -1,3 +1,7 @@
+0.2.0 / 2018-03-06
+==================
+   * Adds setting for quote-type: single | double
+
 0.1.6 / 2018-08-26
 ==================
   * Adds travis support
@@ -31,4 +35,3 @@
   * Adds setting for function-type
   * Adds setting for semicolon
   * Adds setting for glob
-

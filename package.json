@@ -11,10 +11,10 @@
     "lodash": "^4.17.5",
     "mocha": "^2.3.3",
     "typescript": "^3.0.1",
-    "vscode": "^1.1.10"
+    "vscode": "^1.1.21"
   },
   "name": "es6-mocha-snippets",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "license": "MIT",
   "displayName": "ES6 Mocha Snippets",
   "description": "Shortcuts to reduce the amount of boiler plate you need to type when creating a test file using mocha.",
@@ -26,7 +26,7 @@
   "author": "Cory Noonan",
   "publisher": "spoonscen",
   "engines": {
-    "vscode": "^0.10.1"
+    "vscode": "^1.26.1"
   },
   "categories": [
     "Snippets"
@@ -68,13 +68,23 @@
           "description": "Add a custom glob pattern for file (**/*.spec.ts) that you want the extension to apply to."
         },
         "mocha-snippets.function-type": {
-          "type": [
+          "type": "string",
+          "enum": [
             "both",
             "arrow",
             "function"
           ],
           "default": "both",
           "description": "Choose what type of snippets you prefer to use either 'arrow' (() =>), 'function' (function), or both"
+        },
+        "mocha-snippets.quote-type": {
+          "type": "string",
+          "enum": [
+            "single",
+            "double"
+          ],
+          "default": "single",
+          "description": "Choose what type of quotes you prefer single or double"
         },
         "mocha-snippets.semicolon": {
           "type": "boolean",
@@ -88,5 +98,8 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.106"
   }
 }
