@@ -1,7 +1,19 @@
 0.2.0 / 2018-03-06
 ==================
    * Adds setting for quote-type: single | double
-   * Normalizes all indentation to 2 spaces
+
+0.1.6 / 2018-08-26
+==================
+  * Adds travis support
+  * Adds test runner config to launch.json
+
+0.1.5 / 2018-08-26
+==================
+  * Adds .vscode-test to .vscodeignore
+
+0.1.4 / 2018-08-26
+==================
+  * Remove vscode-test folder form .vscodeignore file and delete vscode-test folder
 
 0.1.3 / 2018-03-06
 ==================

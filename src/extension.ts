@@ -15,6 +15,7 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
   private functionType: Config['functionType']
   private quoteType: Config['quoteType']
 
+
   constructor(config: Config) {
     this.customPrefix = config.customPrefix
     this.semicolons = config.semicolons
@@ -27,7 +28,6 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
 
   mutateBody = compose(this.maybeDoubleQuotes, this.maybeRemoveSemicolons)
 
-  provideCompletionItems = (document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.CompletionItem[] => {
     return snippets
       .filter(s => {
         if (this.functionType === 'both') return s
@@ -35,8 +35,10 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
         if (this.functionType === 'function' && s.functionType === 'function') return s
       })
       .map(({ body, description, prefix }) => {
-        const completionItem = new vscode.CompletionItem(prefix, vscode.CompletionItemKind.Snippet)
-        completionItem.insertText = new vscode.SnippetString(this.mutateBody(body.join('\n')), )
+        const completionItem = new vscode.CompletionItem(prefix)
+        completionItem.kind = vscode.CompletionItemKind.Snippet
+
+        completionItem.insertText = String(this.semicolons ? body.join('\n') : body.join('\n').replace(/;/g, ''))
         completionItem.filterText = this.customPrefix ? this.customPrefix + prefix : prefix
         completionItem.detail = description
         return completionItem
@@ -52,8 +54,10 @@ export function activate(context: vscode.ExtensionContext) {
   const functionType = config.get<Config['functionType']>('function-type', 'both')
   const quoteType = config.get<Config['quoteType']>('quote-type', 'single')
 
+
   const selector: vscode.DocumentSelector = ['typescript', 'javascript', 'typescriptreact', 'javascriptreact'].map(language => ({ language, pattern: glob }))
   const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, new CompletionItemProvider({ semicolons, customPrefix, functionType, quoteType }))
+
   context.subscriptions.push(SnippetProvider)
 }
 
