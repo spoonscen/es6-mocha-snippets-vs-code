@@ -11,6 +11,10 @@ before_install:
       sleep 3;
     fi
 
+env:
+  global:
+  - CODE_VERSION: 0.10.1
+
 install:
   - npm install
   - npm run vscode:prepublish
