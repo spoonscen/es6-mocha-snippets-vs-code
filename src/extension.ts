@@ -36,10 +36,9 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
         if (this.functionType === 'function' && s.functionType === 'function') return s
       })
       .map(({ body, description, prefix }) => {
-        const completionItem = new vscode.CompletionItem(prefix)
-        completionItem.kind = vscode.CompletionItemKind.Snippet
+        const completionItem = new vscode.CompletionItem(prefix, vscode.CompletionItemKind.Snippet)
 
-        completionItem.insertText = String(this.semicolons ? body.join('\n') : body.join('\n').replace(/;/g, ''))
+        completionItem.insertText = new vscode.SnippetString(this.semicolons ? body.join('\n') : body.join('\n').replace(/;/g, ''))
         completionItem.filterText = this.customPrefix ? this.customPrefix + prefix : prefix
         completionItem.detail = description
         return completionItem
@@ -57,7 +56,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 
   const selector: vscode.DocumentSelector = ['typescript', 'javascript', 'typescriptreact', 'javascriptreact'].map(language => ({ language, pattern: glob }))
-  const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, new CompletionItemProvider({ semicolons, customPrefix, functionType, quoteType }))
+
+  const snippets = new CompletionItemProvider({ semicolons, customPrefix, functionType, quoteType })
+  const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, snippets)
 
   context.subscriptions.push(SnippetProvider)
 }

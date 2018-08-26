@@ -11,7 +11,7 @@
     "lodash": "^4.17.5",
     "mocha": "^2.3.3",
     "typescript": "^3.0.1",
-    "vscode": "^1.1.10"
+    "vscode": "^1.1.21"
   },
   "name": "es6-mocha-snippets",
   "version": "0.2.0",
@@ -26,7 +26,7 @@
   "author": "Cory Noonan",
   "publisher": "spoonscen",
   "engines": {
-    "vscode": "^0.10.1"
+    "vscode": "^1.26.1"
   },
   "categories": [
     "Snippets"
