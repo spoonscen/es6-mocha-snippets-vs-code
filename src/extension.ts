@@ -18,7 +18,7 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
     this.functionType = config.functionType
   }
 
-  provideCompletionItems = (document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.CompletionItem[] => {
+  provideCompletionItems = (_document: vscode.TextDocument, _position: vscode.Position, _token: vscode.CancellationToken): vscode.CompletionItem[] => {
     return snippets
       .filter(s => {
         if (this.functionType === 'both') return s
