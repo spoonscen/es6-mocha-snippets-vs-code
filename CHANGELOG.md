@@ -1,3 +1,7 @@
+0.1.5 / 2018-08-26
+==================
+  * Adds .vscode-test to .vscodeignore
+
 0.1.4 / 2018-08-26
 ==================
   * Remove vscode-test folder form .vscodeignore file and delete vscode-test folder
