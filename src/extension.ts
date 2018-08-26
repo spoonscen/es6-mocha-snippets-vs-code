@@ -28,6 +28,7 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
 
   mutateBody = compose(this.maybeDoubleQuotes, this.maybeRemoveSemicolons)
 
+  provideCompletionItems = (_document: vscode.TextDocument, _position: vscode.Position, _token: vscode.CancellationToken): vscode.CompletionItem[] => {
     return snippets
       .filter(s => {
         if (this.functionType === 'both') return s
