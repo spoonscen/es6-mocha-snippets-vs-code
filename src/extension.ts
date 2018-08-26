@@ -38,7 +38,7 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
       .map(({ body, description, prefix }) => {
         const completionItem = new vscode.CompletionItem(prefix, vscode.CompletionItemKind.Snippet)
 
-        completionItem.insertText = new vscode.SnippetString(this.semicolons ? body.join('\n') : body.join('\n').replace(/;/g, ''))
+        completionItem.insertText = new vscode.SnippetString(this.mutateBody(body.join('\n')))
         completionItem.filterText = this.customPrefix ? this.customPrefix + prefix : prefix
         completionItem.detail = description
         return completionItem
