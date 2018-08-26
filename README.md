@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/spoonscen/es6-mocha-snippets-vs-code.svg?branch=master)](https://travis-ci.org/spoonscen/es6-mocha-snippets-vs-code)
+
 # ES6 Mocha Snippets for Visual Studio Code!
 Mocha snippets for Visual Studio Code using ES6 syntax.  The focus is to keep the code dry leveraging arrow functions and omitting curlies by where possible.  The snippets use the Mocha function names for ease of memory that way you don't need to learn new names.
 

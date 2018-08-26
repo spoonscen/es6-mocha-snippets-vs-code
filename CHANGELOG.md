@@ -1,3 +1,8 @@
+0.1.6 / 2018-08-26
+==================
+  * Adds travis support
+  * Adds test runner config to launch.json
+
 0.1.5 / 2018-08-26
 ==================
   * Adds .vscode-test to .vscodeignore

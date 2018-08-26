@@ -9,12 +9,13 @@
     "@types/mocha": "^2.2.48",
     "@types/node": "^6.0.40",
     "lodash": "^4.17.5",
-    "mocha": "2.3.3",
-    "typescript": "^2.0.3",
+    "mocha": "^2.3.3",
+    "typescript": "^3.0.1",
     "vscode": "^1.1.10"
   },
   "name": "es6-mocha-snippets",
-  "version": "0.1.5",
+  "version": "0.1.6",
+  "license": "MIT",
   "displayName": "ES6 Mocha Snippets",
   "description": "Shortcuts to reduce the amount of boiler plate you need to type when creating a test file using mocha.",
   "galleryBanner": {
