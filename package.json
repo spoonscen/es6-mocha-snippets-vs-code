@@ -5,10 +5,13 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
+  "dependencies": {
+    "lodash": "^4.17.5"
+  },
   "devDependencies": {
+    "@types/lodash": "^4.14.106",
     "@types/mocha": "^2.2.48",
     "@types/node": "^6.0.40",
-    "lodash": "^4.17.5",
     "mocha": "^2.3.3",
     "typescript": "^3.0.1",
     "vscode": "^1.1.21"
@@ -98,8 +101,5 @@
         }
       }
     }
-  },
-  "dependencies": {
-    "@types/lodash": "^4.14.106"
   }
 }
