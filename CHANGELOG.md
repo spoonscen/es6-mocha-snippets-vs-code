@@ -1,3 +1,7 @@
+0.2.1 / 2018-03-06
+==================
+   * Fixes bug where lodash wasn't being loaded
+
 0.2.0 / 2018-03-06
 ==================
    * Adds setting for quote-type: single | double
