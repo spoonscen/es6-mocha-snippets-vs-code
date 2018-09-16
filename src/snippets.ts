@@ -165,7 +165,7 @@ const snippets: Snippet[] = [
     prefix: "fafterEach",
     functionType: 'function',
     body: [
-      "fafterEach(function () {",
+      "afterEach(function () {",
       "\t${1}",
       "});"
     ],
