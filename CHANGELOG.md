@@ -1,8 +1,13 @@
-0.2.1 / 2018-03-06
+0.2.2 / 2018-09-16
+==================
+   * Fixes typo in afterEach
+   * Fixes dates in change
+
+0.2.1 / 2018-08-26
 ==================
    * Fixes bug where lodash wasn't being loaded
 
-0.2.0 / 2018-03-06
+0.2.0 / 2018-08-26
 ==================
    * Adds setting for quote-type: single | double
 
