@@ -1,15 +1,24 @@
+0.3.0 / 2018-09-17
+==================
+  * Adds types for typescript files
+
 0.2.2 / 2018-09-16
 ==================
-   * Fixes typo in afterEach
-   * Fixes dates in change
+  * Fixes typo in afterEach
+  * Fixes dates in change
+
+0.2.2 / 2018-09-16
+==================
+  * Fixes typo in afterEach
+  * Fixes dates in change
 
 0.2.1 / 2018-08-26
 ==================
-   * Fixes bug where lodash wasn't being loaded
+  * Fixes bug where lodash wasn't being loaded
 
 0.2.0 / 2018-08-26
 ==================
-   * Adds setting for quote-type: single | double
+  * Adds setting for quote-type: single | double
 
 0.1.6 / 2018-08-26
 ==================

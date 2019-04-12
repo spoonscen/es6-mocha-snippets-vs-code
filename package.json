@@ -17,7 +17,7 @@
     "vscode": "^1.1.21"
   },
   "name": "es6-mocha-snippets",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "license": "MIT",
   "displayName": "ES6 Mocha Snippets",
   "description": "Shortcuts to reduce the amount of boiler plate you need to type when creating a test file using mocha.",
