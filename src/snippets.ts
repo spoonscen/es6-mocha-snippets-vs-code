@@ -5,7 +5,7 @@ const snippets: Snippet[] = [
     prefix: "before",
     functionType: 'arrow',
     body: [
-      "before(() => {",
+      "before((): void => {",
       "\t${1}",
       "});"
     ],
@@ -15,7 +15,7 @@ const snippets: Snippet[] = [
     prefix: "fbefore",
     functionType: 'function',
     body: [
-      "before(function () {",
+      "before(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -25,7 +25,7 @@ const snippets: Snippet[] = [
     prefix: "beforeNamed",
     functionType: 'arrow',
     body: [
-      "before(function ${1}() {",
+      "before(function ${1}(): void {",
       "\t${2}",
       "});"
     ],
@@ -35,7 +35,7 @@ const snippets: Snippet[] = [
     prefix: "beforeDescription",
     functionType: 'arrow',
     body: [
-      "before('${1}', () => {",
+      "before('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -45,7 +45,7 @@ const snippets: Snippet[] = [
     prefix: "fbeforeDescription",
     functionType: 'function',
     body: [
-      "before('${1}', function () {",
+      "before('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -55,7 +55,7 @@ const snippets: Snippet[] = [
     prefix: "beforeEach",
     functionType: 'arrow',
     body: [
-      "beforeEach(() => {",
+      "beforeEach((): void => {",
       "\t${1}",
       "});"
     ],
@@ -65,7 +65,7 @@ const snippets: Snippet[] = [
     prefix: "fbeforeEach",
     functionType: 'function',
     body: [
-      "beforeEach(function () {",
+      "beforeEach(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -75,7 +75,7 @@ const snippets: Snippet[] = [
     prefix: "beforeEachNamed",
     functionType: 'arrow',
     body: [
-      "beforeEach(function ${1}() {",
+      "beforeEach(function ${1}(): void {",
       "\t${2}",
       "});"
     ],
@@ -85,7 +85,7 @@ const snippets: Snippet[] = [
     prefix: "beforeEachDescription",
     functionType: 'arrow',
     body: [
-      "beforeEach('${1}', () => {",
+      "beforeEach('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -95,7 +95,7 @@ const snippets: Snippet[] = [
     prefix: "fbeforeEachDescription",
     functionType: 'function',
     body: [
-      "beforeEach('${1}', function () {",
+      "beforeEach('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -105,7 +105,7 @@ const snippets: Snippet[] = [
     prefix: "after",
     functionType: 'arrow',
     body: [
-      "after(() => {",
+      "after((): void => {",
       "\t${1}",
       "});"
     ],
@@ -115,7 +115,7 @@ const snippets: Snippet[] = [
     prefix: "fafter",
     functionType: 'function',
     body: [
-      "after(function () {",
+      "after(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -125,7 +125,7 @@ const snippets: Snippet[] = [
     prefix: "afterNamed",
     functionType: 'arrow',
     body: [
-      "after(function ${1}() {",
+      "after(function ${1}(): void {",
       "\t${2}",
       "});"
     ],
@@ -135,7 +135,7 @@ const snippets: Snippet[] = [
     prefix: "afterDescription",
     functionType: 'arrow',
     body: [
-      "after('${1}', () => {",
+      "after('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -145,7 +145,7 @@ const snippets: Snippet[] = [
     prefix: "fafterDescription",
     functionType: 'function',
     body: [
-      "after('${1}', function () {",
+      "after('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -155,7 +155,7 @@ const snippets: Snippet[] = [
     prefix: "afterEach",
     functionType: 'arrow',
     body: [
-      "afterEach(() => {",
+      "afterEach((): void => {",
       "\t${1}",
       "});"
     ],
@@ -165,7 +165,7 @@ const snippets: Snippet[] = [
     prefix: "fafterEach",
     functionType: 'function',
     body: [
-      "afterEach(function () {",
+      "afterEach(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -175,7 +175,7 @@ const snippets: Snippet[] = [
     prefix: "afterEachNamed",
     functionType: 'arrow',
     body: [
-      "afterEach(function ${1}() {",
+      "afterEach(function ${1}(): void {",
       "\t${2}",
       "});"
     ],
@@ -185,7 +185,7 @@ const snippets: Snippet[] = [
     prefix: "afterEachDescription",
     functionType: 'arrow',
     body: [
-      "afterEach('${1}', () => {",
+      "afterEach('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -195,7 +195,7 @@ const snippets: Snippet[] = [
     prefix: "fafterEachDescription",
     functionType: 'function',
     body: [
-      "afterEach('${1}', function () {",
+      "afterEach('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -205,7 +205,7 @@ const snippets: Snippet[] = [
     prefix: "describeAndIt",
     functionType: 'arrow',
     body: [
-      "describe('${1}', () => {",
+      "describe('${1}', (): void => {",
       "\tit('${2}', () => {",
       "\t\t${3}",
       "\t});",
@@ -217,8 +217,8 @@ const snippets: Snippet[] = [
     prefix: "fdescribeAndIt",
     functionType: 'function',
     body: [
-      "describe('${1}', function () {",
-      "\tit('${2}', function () {",
+      "describe('${1}', function (): void {",
+      "\tit('${2}', function (): void {",
       "\t\t${3}",
       "\t});",
       "});"
@@ -229,7 +229,7 @@ const snippets: Snippet[] = [
     prefix: "describe",
     functionType: 'arrow',
     body: [
-      "describe('${1}', () => {",
+      "describe('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -239,7 +239,7 @@ const snippets: Snippet[] = [
     prefix: "fdescribe",
     functionType: 'function',
     body: [
-      "describe('${1}', function () {",
+      "describe('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -249,8 +249,8 @@ const snippets: Snippet[] = [
     prefix: "contextAndIt",
     functionType: 'arrow',
     body: [
-      "context('${1}', () => {",
-      "\tit('${2}', () => {",
+      "context('${1}', (): void => {",
+      "\tit('${2}', (): void => {",
       "\t\t${3}",
       "\t});",
       "});"
@@ -261,8 +261,8 @@ const snippets: Snippet[] = [
     prefix: "fcontextAndIt",
     functionType: 'function',
     body: [
-      "context('${1}', function () {",
-      "\tit('${2}', function () {",
+      "context('${1}', function (): void {",
+      "\tit('${2}', function (): void {",
       "\t\t${3}",
       "\t});",
       "});"
@@ -273,7 +273,7 @@ const snippets: Snippet[] = [
     prefix: "context",
     functionType: 'arrow',
     body: [
-      "context('${1}', () => {",
+      "context('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -283,7 +283,7 @@ const snippets: Snippet[] = [
     prefix: "fcontext",
     functionType: 'function',
     body: [
-      "context('${1}', function () {",
+      "context('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -293,7 +293,7 @@ const snippets: Snippet[] = [
     prefix: "it",
     functionType: 'arrow',
     body: [
-      "it('${1}', () => {",
+      "it('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -303,7 +303,7 @@ const snippets: Snippet[] = [
     prefix: "fit",
     functionType: 'function',
     body: [
-      "it('${1}', function () {",
+      "it('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -313,7 +313,7 @@ const snippets: Snippet[] = [
     prefix: "suite",
     functionType: 'arrow',
     body: [
-      "suite('${1}', () => {",
+      "suite('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -323,7 +323,7 @@ const snippets: Snippet[] = [
     prefix: "fsuite",
     functionType: 'function',
     body: [
-      "suite('${1}', function () {",
+      "suite('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -333,7 +333,7 @@ const snippets: Snippet[] = [
     prefix: "suiteSetup",
     functionType: 'arrow',
     body: [
-      "suiteSetup(() => {",
+      "suiteSetup((): void => {",
       "\t${1}",
       "});"
     ],
@@ -343,7 +343,7 @@ const snippets: Snippet[] = [
     prefix: "fsuiteSetup",
     functionType: 'function',
     body: [
-      "suiteSetup(function () {",
+      "suiteSetup(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -353,7 +353,7 @@ const snippets: Snippet[] = [
     prefix: "setup",
     functionType: 'arrow',
     body: [
-      "setup(() => {",
+      "setup((): void => {",
       "\t${1}",
       "});"
     ],
@@ -363,7 +363,7 @@ const snippets: Snippet[] = [
     prefix: "fsetup",
     functionType: 'function',
     body: [
-      "setup(function () {",
+      "setup(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -373,7 +373,7 @@ const snippets: Snippet[] = [
     prefix: "suiteTeardown",
     functionType: 'arrow',
     body: [
-      "suiteTeardown(() => {",
+      "suiteTeardown((): void => {",
       "\t${1}",
       "});"
     ],
@@ -383,7 +383,7 @@ const snippets: Snippet[] = [
     prefix: "fsuiteTeardown",
     functionType: 'function',
     body: [
-      "suiteTeardown(function () {",
+      "suiteTeardown(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -393,7 +393,7 @@ const snippets: Snippet[] = [
     prefix: "teardown",
     functionType: 'arrow',
     body: [
-      "teardown(() => {",
+      "teardown((): void => {",
       "\t${1}",
       "});"
     ],
@@ -403,7 +403,7 @@ const snippets: Snippet[] = [
     prefix: "fteardown",
     functionType: 'function',
     body: [
-      "teardown(function () {",
+      "teardown(function (): void {",
       "\t${1}",
       "});"
     ],
@@ -413,7 +413,7 @@ const snippets: Snippet[] = [
     prefix: "test",
     functionType: 'arrow',
     body: [
-      "test('${1}', () => {",
+      "test('${1}', (): void => {",
       "\t${2}",
       "});"
     ],
@@ -423,7 +423,7 @@ const snippets: Snippet[] = [
     prefix: "ftest",
     functionType: 'function',
     body: [
-      "test('${1}', function () {",
+      "test('${1}', function (): void {",
       "\t${2}",
       "});"
     ],
@@ -433,15 +433,15 @@ const snippets: Snippet[] = [
     prefix: "entireSuite",
     functionType: 'arrow',
     body: [
-      "suite('${1}', () => {",
+      "suite('${1}', (): void => {",
       "",
-      "\tsuiteSetup(() => { });",
+      "\tsuiteSetup((): void => { });",
       "",
-      "\ttest('${2}', () => {",
+      "\ttest('${2}', (): void => {",
       "\t\t${3}",
       "\t});",
       "",
-      "\tsuiteTeardown(() => { });",
+      "\tsuiteTeardown((): void => { });",
       "});"
     ],
     description: "Mocha::EntireSuite"
@@ -450,15 +450,15 @@ const snippets: Snippet[] = [
     prefix: "fentireSuite",
     functionType: 'function',
     body: [
-      "suite('${1}', function () {",
+      "suite('${1}', function (): void {",
       "",
-      "\tsuiteSetup(function () { });",
+      "\tsuiteSetup(function (): void { });",
       "",
-      "\ttest('${2}', function () {",
+      "\ttest('${2}', function (): void {",
       "\t\t${3}",
       "\t});",
       "",
-      "\tsuiteTeardown(function () { });",
+      "\tsuiteTeardown(function (): void { });",
       "});"
     ],
     description: "Mocha::EntireSuite::Function"
@@ -469,7 +469,7 @@ const snippets: Snippet[] = [
     body: [
       "exports.${1} = {",
       "\t'${2}': {",
-      "\t\t'${3}': () => {",
+      "\t\t'${3}': (): void => {",
       "\t\t\t${4}",
       "\t\t},",
       "\t}",
@@ -483,7 +483,7 @@ const snippets: Snippet[] = [
     body: [
       "exports.${1} = {",
       "\t'${2}': {",
-      "\t\t'${3}': function () {",
+      "\t\t'${3}': function (): void {",
       "\t\t\t${4}",
       "\t\t},",
       "\t}",

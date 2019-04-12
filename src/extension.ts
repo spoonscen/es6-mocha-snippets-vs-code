@@ -7,6 +7,7 @@ type Config = {
   customPrefix: string
   functionType: 'arrow' | 'function' | 'both'
   quoteType: 'double' | 'single'
+  lang: 'js' | 'ts'
 }
 
 export class CompletionItemProvider implements vscode.CompletionItemProvider {
@@ -14,19 +15,22 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
   private customPrefix: Config['customPrefix']
   private functionType: Config['functionType']
   private quoteType: Config['quoteType']
-
+  private lang: Config['lang']
 
   constructor(config: Config) {
     this.customPrefix = config.customPrefix
     this.semicolons = config.semicolons
     this.functionType = config.functionType
     this.quoteType = config.quoteType
+    this.lang = config.lang
   }
 
   maybeRemoveSemicolons = (bodyString: string): string => this.semicolons ? bodyString : bodyString.replace(/;/g, '')
   maybeDoubleQuotes = (bodyString: string): string => this.quoteType === 'single' ? bodyString : bodyString.replace(/'/g, '"')
+  maybeStripTypes = (bodyString: string): string => this.lang === 'ts' ? bodyString : bodyString.replace(/\: void/g, '')
 
-  mutateBody = compose(this.maybeDoubleQuotes, this.maybeRemoveSemicolons)
+
+  transformBody = compose(this.maybeDoubleQuotes, this.maybeRemoveSemicolons, this.maybeStripTypes)
 
   provideCompletionItems = (_document: vscode.TextDocument, _position: vscode.Position, _token: vscode.CancellationToken): vscode.CompletionItem[] => {
     return snippets
@@ -38,7 +42,7 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
       .map(({ body, description, prefix }) => {
         const completionItem = new vscode.CompletionItem(prefix, vscode.CompletionItemKind.Snippet)
 
-        completionItem.insertText = new vscode.SnippetString(this.mutateBody(body.join('\n')))
+        completionItem.insertText = new vscode.SnippetString(this.transformBody(body.join('\n')))
         completionItem.filterText = this.customPrefix ? this.customPrefix + prefix : prefix
         completionItem.detail = description
         return completionItem
@@ -55,12 +59,18 @@ export function activate(context: vscode.ExtensionContext) {
   const quoteType = config.get<Config['quoteType']>('quote-type', 'single')
 
 
-  const selector: vscode.DocumentSelector = ['typescript', 'javascript', 'typescriptreact', 'javascriptreact'].map(language => ({ language, pattern: glob }))
+  const jsSelector: vscode.DocumentSelector = ['javascript', 'javascriptreact'].map(language => ({ language, pattern: glob }))
+  const tsSelector: vscode.DocumentSelector = ['typescript', 'typescriptreact'].map(language => ({ language, pattern: glob }))
 
-  const snippets = new CompletionItemProvider({ semicolons, customPrefix, functionType, quoteType })
-  const SnippetProvider = vscode.languages.registerCompletionItemProvider(selector, snippets)
+  const jsSnippets = new CompletionItemProvider({ semicolons, customPrefix, functionType, quoteType, lang: 'js' })
 
-  context.subscriptions.push(SnippetProvider)
+  const tsSnippets = new CompletionItemProvider({ semicolons, customPrefix, functionType, quoteType, lang: 'ts' })
+
+  const JsSnippetProvider = vscode.languages.registerCompletionItemProvider(jsSelector, jsSnippets)
+
+  const TsSnippetProvider = vscode.languages.registerCompletionItemProvider(tsSelector, tsSnippets)
+
+  context.subscriptions.push(JsSnippetProvider, TsSnippetProvider)
 }
 
 export function deactivate() {

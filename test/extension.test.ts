@@ -16,6 +16,7 @@ describe('extension', () => {
         string,
         functionType: 'arrow' | 'function' | 'both',
         quoteType: 'single' | 'double'
+        lang: 'js' | 'ts'
       }
 
       beforeEach(() => {
@@ -23,7 +24,8 @@ describe('extension', () => {
           semicolons: true,
           customPrefix: '',
           functionType: 'both',
-          quoteType: 'single'
+          quoteType: 'single',
+          lang: 'js',
         }
       });
 
@@ -98,23 +100,33 @@ describe('extension', () => {
         })
       })
 
-      it('returns arrow functions when the functionType is arrow', () => {
+      it('returns arrow function snippets when the functionType is arrow', () => {
         options.functionType = 'arrow'
         const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
 
-        completionItems.forEach((item, ix) => {
+        completionItems.forEach((item) => {
           assert.equal(item.filterText.startsWith('f'), false)
         })
       })
 
-      it('returns function functions when the functionType is function', () => {
+      it('returns function snippets when the functionType is function', () => {
         options.functionType = 'function'
         const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
 
-        completionItems.forEach((item, ix) => {
+        completionItems.forEach((item) => {
           assert.equal(item.filterText.startsWith('f'), true)
         })
       })
+
+      it('removes :void when lang is js', () => {
+        options.lang = 'js'
+        const completionItems = new CompletionItemProvider(options).provideCompletionItems({} as any, {} as any, {} as any)
+
+        completionItems.forEach((item) => {
+          assert.equal(item.filterText.includes(':void'), false, `${item.label} filterText contains ": void" but should not`)
+        })
+      })
+
     })
   })
 })
