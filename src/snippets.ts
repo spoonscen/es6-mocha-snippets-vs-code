@@ -226,6 +226,36 @@ const snippets: Snippet[] = [
     description: "Mocha::Describe with It::Function"
   },
   {
+    prefix: "describeAndBeforeAndIt",
+    functionType: 'arrow',
+    body: [
+      "describe('${1}', () => {",
+      "\tbefore('${2}', () => {",
+      "\t\t${4}",
+      "\t});",
+      "\tit('${3}', () => {",
+      "\t\t${5}",
+      "\t});",
+      "});"
+    ],
+    description: "Mocha::Describe with Before and It"
+  },
+  {
+    prefix: "fdescribeAndBeforeAndIt",
+    functionType: 'function',
+    body: [
+      "describe('${1}', function () {",
+      "\tbefore('${2}', function () {",
+      "\t\t${4}",
+      "\t});",
+      "\tit('${3}', function () {",
+      "\t\t${5}",
+      "\t});",
+      "});"
+    ],
+    description: "Mocha::Describe with Before::Function and It::Function"
+  },
+  {
     prefix: "describe",
     functionType: 'arrow',
     body: [
